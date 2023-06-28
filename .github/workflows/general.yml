@@ -29,20 +29,20 @@ jobs:
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
     # Service containers to run with the `test` container job
-    services:
-      # Label used to access the service container
-      postgres:
-        # Docker Hub image
-        image: postgres:14
-        # Environment variables scoped only for the `postgres` element
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: password
-          POSTGRES_DB: postgres
-        # When you map ports using the ports keyword, GitHub uses the --publish command to publish the container’s ports to the Docker host
-        # Opens tcp port 5432 on the host and service container
-        ports:
-          - 5432:5432
+#    services:
+#      # Label used to access the service container
+#      postgres:
+#        # Docker Hub image
+#        image: postgres:14
+#        # Environment variables scoped only for the `postgres` element
+#        env:
+#          POSTGRES_USER: postgres
+#          POSTGRES_PASSWORD: password
+#          POSTGRES_DB: postgres
+#        # When you map ports using the ports keyword, GitHub uses the --publish command to publish the container’s ports to the Docker host
+#        # Opens tcp port 5432 on the host and service container
+#        ports:
+#          - 5432:5432
     steps:
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
